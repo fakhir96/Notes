@@ -5,7 +5,7 @@ export function useApi() {
 
   return async <T>(path: string, options: RequestInit = {}): Promise<T> => {
     const token = await getToken(); // fresh token for every request
-    const res = await fetch(`${import.meta.env.VITE_API_URL}${path}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}${path}`, {
       ...options,
       headers: {
         "Content-Type": "application/json",
